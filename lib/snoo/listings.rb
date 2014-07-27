@@ -44,7 +44,7 @@ module Snoo
     end
 
     def get_posts_by_id opts = {}
-      url = "by_id/%s.json" % [(opts[:posts] if opts[:posts] )]
+      url = "/by_id/%s.json" % [(opts[:posts] if opts[:posts] )]
       # Delete subreddit and page from the hash, they dont belong in the query
       [:posts].each {|k| opts.delete k}
       query = opts
