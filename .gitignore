@@ -2,6 +2,7 @@ tmp
 spec/reports
 coverage
 
+/.idea/*
 *.gem
 InstalledFiles
 *.rbc

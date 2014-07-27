@@ -43,6 +43,15 @@ module Snoo
       get(url, query: query)
     end
 
+    def get_posts_by_id opts = {}
+      url = "by_id/%s.json" % [(opts[:posts] if opts[:posts] )]
+      # Delete subreddit and page from the hash, they dont belong in the query
+      [:posts].each {|k| opts.delete k}
+      query = opts
+      # Make the request
+      get(url, query: query)
+    end
+
     # Search reddit
     #
     # @param query [String] The search query.
