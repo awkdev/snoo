@@ -70,9 +70,9 @@ module Snoo
     #
     # @param (see #delete)
     # @reutrn (see #comment)
-    def report id
+    def report id, reason = ''
       logged_in?
-      post('/api/report', body: {id: id, uh: @modhash, api_type: 'json'})
+      post('/api/report', body: {thing_id: id, reason: reason, uh: @modhash, api_type: 'json'})
     end
 
     # Saves a link
